@@ -1,0 +1,26 @@
+# React Coding Tasks
+
+Collection of React coding tasks commonly asked in Frontend and Full Stack Developer interviews.
+
+## Tasks
+
+- [1] Counter App
+- 2 Countdown Timer
+- [ ] Digital Clock
+- [ ] Character Counter
+- [ ] Toggle Component
+- [ ] Password Visibility Toggle
+- [ ] Todo App
+- [ ] Search Filter
+- [ ] Pagination
+- [ ] Debounced Search
+- [ ] Accordion
+- [ ] Tabs Component
+- [ ] Fetch Users API
+- [ ] Loading & Error States
+- [ ] Infinite Scroll
+- [ ] Sort Users Table
+- [ ] Stopwatch
+- [ ] OTP Input
+- [ ] Progress Bar
+- [ ] Modal Component
