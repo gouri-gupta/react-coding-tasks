@@ -32,7 +32,7 @@ The application displays:
 ## Project Structure
 
 ```text
-01-counter-app/
+counter/
 ├── src/
 ├── public/
 ├── package.json

@@ -118,7 +118,9 @@ Run development server:
 
 Open:
 
-```text [http://localhost:**5173**](http://localhost:**5173**) ```
+```text 
+http://localhost:5173
+```
 
 ---
 
