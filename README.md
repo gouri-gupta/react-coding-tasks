@@ -7,7 +7,7 @@ Collection of React coding tasks commonly asked in Frontend and Full Stack Devel
 - [x] Counter App
 - [x] Countdown Timer
 - [x] Digital Clock
-- [ ] Character Counter
+- [x] Character Counter
 - [ ] Toggle Component
 - [ ] Password Visibility Toggle
 - [ ] Todo App
