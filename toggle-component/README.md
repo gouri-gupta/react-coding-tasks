@@ -68,7 +68,9 @@ Welcome to React
 
 The component uses a boolean state variable:
 
-```javascript const [show, setShow] = useState(false); ```
+```javascript 
+const [show, setShow] = useState(false); 
+```
 
 - `false` → Content hidden
 - `true` → Content visible
@@ -79,11 +81,15 @@ The component uses a boolean state variable:
 
 Button text changes dynamically:
 
-```javascript show ? *Hide* : *Show* ```
+```javascript 
+show ? *Hide* : *Show* 
+```
 
 Content is displayed only when:
 
-```javascript show && <h1>Content</h1> ```
+```javascript 
+show && <h1>Content</h1> 
+```
 
 ---
 
@@ -91,7 +97,9 @@ Content is displayed only when:
 
 When state changes:
 
-```javascript setShow(true); ```
+```javascript 
+setShow(true);
+ ```
 
 React re-renders the component and updates the UI automatically.
 
@@ -101,7 +109,13 @@ React re-renders the component and updates the UI automatically.
 
 ## Component loads with `show = false`.
 
-## User clicks **Show**. ## State updates to `true`. ## React re-renders the component. ## Content becomes visible. ## User clicks **Hide**. ## State updates to `false`. ## Content becomes hidden again.
+## User clicks **Show**.
+## State updates to `true`. 
+## React re-renders the component. 
+## Content becomes visible. 
+## User clicks **Hide**. 
+## State updates to `false`. 
+## Content becomes hidden again.
 
 ---
 
