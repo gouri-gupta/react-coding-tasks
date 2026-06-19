@@ -11,7 +11,7 @@ Collection of React coding tasks commonly asked in Frontend and Full Stack Devel
 - [x] Toggle Component
 - [x] Password Visibility Toggle
 - [x] Todo App
-- [ ] Search Filter
+- [x] Search Filter
 - [ ] Pagination
 - [ ] Debounced Search
 - [ ] Accordion
