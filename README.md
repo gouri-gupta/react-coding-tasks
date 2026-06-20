@@ -14,7 +14,7 @@ Collection of React coding tasks commonly asked in Frontend and Full Stack Devel
 - [x] Search Filter
 - [x] Pagination
 - [x] Debounced Search
-- [ ] Accordion
+- [x] Accordion
 - [ ] Tabs Component
 - [ ] Fetch Users API
 - [ ] Loading & Error States
