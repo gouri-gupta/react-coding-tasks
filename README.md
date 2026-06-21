@@ -16,7 +16,7 @@ Collection of React coding tasks commonly asked in Frontend and Full Stack Devel
 - [x] Debounced Search
 - [x] Accordion
 - [x] Tabs Component
-- [ ] Fetch Users API
+- [x] Fetch Users API
 - [ ] Loading & Error States
 - [ ] Infinite Scroll
 - [ ] Sort Users Table
