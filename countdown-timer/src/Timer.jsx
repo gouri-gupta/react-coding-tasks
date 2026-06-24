@@ -3,7 +3,7 @@ import  { useState,useRef } from 'react'
     {/**Intially implementing countdown timer for 10 seconds only Then we will implement it with custom input from user */}
 const Timer = () => {
     let [userTime,setUserTime]=useState(0)
-    let [time,setTime]=useState(userTime)   //Initially implementing for 10 seconds only 
+    let [time,setTime]=useState(userTime)   
     
     let [start,setStart]=useState(true)
     //false = start button disabled ; true =start button enabled

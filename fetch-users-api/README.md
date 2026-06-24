@@ -1,6 +1,6 @@
-# Fetch Users API
+# Fetch Users API with Loading & Error States
 
-A React application that fetches user data from an external API and displays user information in a simple directory.
+A React application that fetches user data from an external API and displays user information in a simple directory while handling loading and error states gracefully.
 
 ## Problem Statement
 
@@ -12,12 +12,20 @@ https://jsonplaceholder.typicode.com/users
 
 ### Features Required
 
+#### Task 13 — Fetch Users API
+
 * Fetch users on page load.
 * Display:
 
   * Name
   * Email
   * Company
+
+#### Task 14 — Loading & Error States
+
+* Show loading indicator while fetching data.
+* Show error message if the API request fails.
+* Display user data on successful response.
 
 ---
 
@@ -27,6 +35,9 @@ https://jsonplaceholder.typicode.com/users
 * Fetch data when component mounts
 * Display user information dynamically
 * Transform API response before rendering
+* Loading State Handling
+* Error State Handling
+* Conditional Rendering based on API status
 * Render data using React state
 
 ---
@@ -39,6 +50,7 @@ https://jsonplaceholder.typicode.com/users
 * useEffect
 * Component Lifecycle
 * State Management
+* Conditional Rendering
 * Rendering Lists
 
 ### API Concepts
@@ -46,12 +58,14 @@ https://jsonplaceholder.typicode.com/users
 * REST API Consumption
 * Axios
 * Async/Await
+* Error Handling
 * Data Transformation
 
 ### JavaScript Concepts
 
 * Array map()
 * Object Creation
+* Try/Catch
 * Async Functions
 
 ---
@@ -71,11 +85,49 @@ fetch-users-api/
 
 ---
 
+## Application States
+
+This application handles three UI states.
+
+### 1. Loading State
+
+Displayed while the API request is in progress.
+
+```text
+Loading...
+```
+
+---
+
+### 2. Success State
+
+Displayed when users are successfully fetched.
+
+```text
+Name              Email                     Company
+
+Leanne Graham     Sincere@april.biz         Romaguera-Crona
+```
+
+---
+
+### 3. Error State
+
+Displayed when the API request fails.
+
+```text
+Failed to fetch users
+```
+
+---
+
 ## How It Works
 
 ### Step 1: Component Loads
 
-The component is rendered for the first time.
+The component renders for the first time.
+
+---
 
 ### Step 2: useEffect Executes
 
@@ -85,11 +137,27 @@ useEffect(() => {
 }, []);
 ```
 
-The empty dependency array ensures the API call happens only once when the component mounts.
+The empty dependency array ensures the API request runs only once when the component mounts.
 
 ---
 
-### Step 3: API Request
+### Step 3: Loading State Starts
+
+```javascript
+setLoading(true);
+```
+
+The application displays:
+
+```text
+Loading...
+```
+
+while waiting for the API response.
+
+---
+
+### Step 4: API Request
 
 ```javascript
 axios.get("https://jsonplaceholder.typicode.com/users")
@@ -99,7 +167,7 @@ Fetches user data from the API.
 
 ---
 
-### Step 4: Transform API Response
+### Step 5: Transform API Response
 
 The API returns many fields:
 
@@ -116,7 +184,7 @@ The API returns many fields:
 }
 ```
 
-For this exercise, only the required fields are extracted:
+Only the required fields are extracted:
 
 ```javascript
 {
@@ -128,56 +196,49 @@ For this exercise, only the required fields are extracted:
 
 ---
 
-### Step 5: Store Data in State
+### Step 6: Success Handling
 
 ```javascript
 setUsers(newarr);
+setLoading(false);
 ```
 
-Updates the component state.
+Users are stored in state and rendered on the screen.
 
 ---
 
-### Step 6: Render Users
-
-Users are displayed dynamically using:
+### Step 7: Error Handling
 
 ```javascript
-users.map(...)
+catch(error) {
+  setError("Failed to fetch users");
+  setLoading(false);
+}
 ```
+
+If the API request fails, an error message is displayed.
 
 ---
 
-## Sample Output
-
-```text
-Name              Email                     Company
-
-Leanne Graham     Sincere@april.biz         Romaguera-Crona
-
-Ervin Howell      Shanna@melissa.tv         Deckow-Crist
-
-Clementine Bauch  Nathan@yesenia.net        Romaguera-Jacobson
-```
-
----
-
-## Key Learning
-
-This project demonstrates a common React workflow:
+## Data Flow
 
 ```text
 Component Mount
         ↓
+Loading State
+        ↓
 API Request
         ↓
-Receive Data
-        ↓
-Transform Data
-        ↓
-Store in State
-        ↓
-Render UI
+ ┌───────────────┬───────────────┐
+ │               │
+ ▼               ▼
+Success         Error
+ │               │
+ ▼               ▼
+Store Users    Store Error
+ │               │
+ ▼               ▼
+Render Users   Render Error
 ```
 
 ---
@@ -193,7 +254,7 @@ git clone <repository-url>
 Navigate into the project:
 
 ```bash
-cd 13-fetch-users-api
+cd fetch-users-api
 ```
 
 Install dependencies:
@@ -218,12 +279,13 @@ http://localhost:5173
 
 ## Future Improvements
 
-* Loading State
-* Error Handling
 * Search Users
 * Pagination
+* User Details Page
+* Retry Button on Error
 * Sorting Users
 * Responsive Table Layout
+* Skeleton Loading UI
 
 ---
 
@@ -241,9 +303,30 @@ http://localhost:5173
 * API Integration
 * React Hooks
 * Async/Await
+* Error Handling
+* Loading State Management
 * Data Transformation
 * State Management
+* Conditional Rendering
 * Dynamic Rendering
+
+---
+
+## Key Learning
+
+This project demonstrates how real-world React applications manage asynchronous data fetching.
+
+```text
+Loading
+    ↓
+API Request
+    ↓
+Success OR Error
+    ↓
+Render Appropriate UI
+```
+
+Instead of assuming the API always succeeds, the application properly handles all possible request states, resulting in a more robust user experience.
 
 ---
 
