@@ -18,7 +18,7 @@ Collection of React coding tasks commonly asked in Frontend and Full Stack Devel
 - [x] Tabs Component
 - [x] Fetch Users API
 - [x] Loading & Error States
-- [ ] Infinite Scroll
+- [x] Infinite Scroll
 - [ ] Sort Users Table
 - [ ] Stopwatch
 - [ ] OTP Input
