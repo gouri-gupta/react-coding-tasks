@@ -22,5 +22,5 @@ Collection of React coding tasks commonly asked in Frontend and Full Stack Devel
 - [x] Sort Users Table
 - [x] Stopwatch
 - [x] OTP Input
-- [ ] Progress Bar
+- [x] Progress Bar
 - [ ] Modal Component
